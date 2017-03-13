@@ -32,7 +32,7 @@ class elvtn_Zillow_Reviews extends WP_Widget {
     $members = apply_filters( 'widget_title', $instance[ 'members' ] );
 
     // Make sure count is a valid value (integer range 3-10, inclusive)
-    /*if( is_numeric( $count ) )
+    if( is_numeric( $count ) )
     {
        $i = intval( $count );
        if($i < 3) { $i = 3; }
@@ -44,25 +44,33 @@ class elvtn_Zillow_Reviews extends WP_Widget {
     {
        $count = 3;
        $instance[ 'count' ] = 3;
-    }*/
-
-    
-
-    echo $args['before_widget'] . $args['before_title'] . $title . $args['after_title'];
-    
-    // Call Zillow API
-    $zillow_api = new Zillow_Api($zwsid);
-
-    
-    // Determine if we have a screen name or email based on having an @ symbol
-    if( strpos($user, '@') == FALSE )
-    {
-       $reviews = $zillow_api->GetProReviews(array('screenname' => $user, 'count' => $count, 'members' => $members));
     }
-    else
+
+    
+    echo $args['before_widget'] . $args['before_title'] . $title . $args['after_title'];
+
+
+    // See if this is already saved in a transient to avoid calling again
+    $transient_key = 'elvtn_zillow_reviews_widget_' . $this->id;
+    if ( FALSE == ( $reviews = get_transient( $transient_key ) ) )
     {
-       $reviews = $zillow_api->GetProReviews(array('email' => $user, 'count' => $count, 'members' => $members));
-    } ?>
+       // Call Zillow API
+       $zillow_api = new Zillow_Api($zwsid);
+
+       // Determine if we have a screen name or email based on having an @ symbol
+       if( strpos($user, '@') == FALSE )
+       {
+          $reviews = $zillow_api->GetProReviews(array('screenname' => $user, 'count' => $count, 'members' => $members));
+       }
+       else
+       {
+          $reviews = $zillow_api->GetProReviews(array('email' => $user, 'count' => $count, 'members' => $members));
+       }
+
+       set_transient( $transient_key, $reviews , 60 * 60 * 24 );
+    }
+    
+     ?>
 
     <?php echo $reviews ?>
     
@@ -128,3 +136,4 @@ function elvtn_register_zillow_reviews_widget()
 add_action( 'widgets_init', 'elvtn_register_zillow_reviews_widget' );
 
 ?>
+
