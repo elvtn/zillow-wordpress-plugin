@@ -2,7 +2,7 @@
 /**
  * Plugin Name:   Zillow Reviews Widget
  * Plugin URI:    https://github.com/elvtn/zillow-wordpress-plugin
- * Description:   Adds an example widget that displays the site title and tagline in a widget area.
+ * Description:   Adds a Zillow Reviews widget.
  * Version:       1.0
  * Author:        Elvtn, LLC
  * Author URI:    https://elvtn.com
