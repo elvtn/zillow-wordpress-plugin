@@ -105,13 +105,10 @@ class elvtn_Zillow_Reviews extends WP_Widget {
       <input type="text" size="2" id="<?php echo $this->get_field_id( 'count' ); ?>" name="<?php echo $this->get_field_name( 'count' ); ?>" value="<?php echo esc_attr( $count ); ?>" />
 
       <br/>
-<?php
-/*
       <label for="<?php echo $this->get_field_id( 'members' ); ?>">Include All Team Member Reviews?</label><br/>
-      <input type="checkbox" id="<?php echo $this->get_field_id( 'members' ); ?>" name="<?php echo $this->get_field_name( 'members' ); ?>" value="true" <?php if(!is_empty( $members )) { echo ( " checked=\"yes\" "); } ?> />
-*/
-?>
-   </p><?php
+      <input type="checkbox" id="<?php echo $this->get_field_id( 'members' ); ?>" name="<?php echo $this->get_field_name( 'members' ); ?>" value="true" />
+    
+      </p><?php
   }
 
 
