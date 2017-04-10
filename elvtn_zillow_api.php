@@ -64,7 +64,7 @@ class Elvtn_Zillow_Api
 
 		$curl_res = $this->curl_post($url, array(), array(), $params);
 
-		return $this->convert_getPublishedLenderReviews_to_html($curl_res);
+		return $this->convert_getPublishedLenderReviews_to_html($curl_res, $screenName);
 	}
 
 	/**
@@ -103,7 +103,7 @@ class Elvtn_Zillow_Api
 	/**
 	 * Converts the JSON output of getPublishedLenderReviews to HTML.
 	 */
-	private function convert_getPublishedLenderReviews_to_html($json)
+	private function convert_getPublishedLenderReviews_to_html($json, $screenName = NULL)
 	{
 		$obj = json_decode($json, true, JSON_NUMERIC_CHECK);
 
@@ -125,6 +125,12 @@ class Elvtn_Zillow_Api
 			$html .= "<p class=\"elvtn-zillow-pro-review-description\"><i>" . $review['content'] . "</i></p>";
 			$html .= "<hr class=\"elvtn-zillow-pro-review-line\"/></div>";
 		}
+
+		if($obj['totalReviews'] != NULL && $screenName != NULL)
+		{
+			$html .= "<p>See all <a href=\"https://www.zillow.com/lender-profile/" . $screenName . "/#reviews\" target=\"_blank\">" . $obj['totalReviews'] . " Reviews</a> on Zillow</p>";
+		}
+
 		$html .= "</div>";
 
 		return $html;
