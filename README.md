@@ -11,6 +11,11 @@ For now there is no provided zip file but you can clone the repository and creat
 
 ## Change Log
 
+### 1.1 (April 10, 2017)
+
+- Cleaned up unused code (still only reviews widget).
+- Converted from ZWS ID to Zill Partner API. You will need to get a partnerId from Zillow.
+
 ### 1.0 (March 13, 2017)
 
 - Initial release.
