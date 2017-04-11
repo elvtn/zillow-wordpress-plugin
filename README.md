@@ -14,7 +14,7 @@ For now there is no provided zip file but you can clone the repository and creat
 ### 1.1 (April 10, 2017)
 
 - Cleaned up unused code (still only reviews widget).
-- Converted from ZWS ID to Zillow Mortgage API. You will need to get a Partner ID from Zillow.
+- Converted from ZWS ID to Zillow Mortgage API. You will need to get a Distribution Partner ID from Zillow.
 
 ### 1.0 (March 13, 2017)
 
