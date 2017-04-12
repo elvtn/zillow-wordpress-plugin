@@ -2,6 +2,8 @@
 
 Plugin for adding Zillow data using WordPress widgets.
 
+This plugin is totally free, but [donations](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8C8535TEAQ7PJ "PayPal") are always welcome :)
+
 ## Installation
 
 For now there is no provided zip file but you can clone the repository and create a zip file of all its contents. This zip file can then be installed using normal WordPress plugin management on your admin screen or via WP-CLI.
