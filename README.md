@@ -23,6 +23,6 @@ For now there is no provided zip file but you can clone the repository and creat
 - Initial release.
 - Only supports reviews widgets.
 
-### 1.0 (October 10, 2017)
+### 1.1 (October 10, 2017)
 
 - Tested with WordPress 4.8.2
