@@ -13,6 +13,10 @@ For now there is no provided zip file but you can clone the repository and creat
 
 ## Change Log
 
+### 1.2 (October 10, 2017)
+
+- Tested with WordPress 4.8.2
+
 ### 1.1 (April 10, 2017)
 
 - Cleaned up unused code (still only reviews widget).
@@ -22,7 +26,3 @@ For now there is no provided zip file but you can clone the repository and creat
 
 - Initial release.
 - Only supports reviews widgets.
-
-### 1.1 (October 10, 2017)
-
-- Tested with WordPress 4.8.2
