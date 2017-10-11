@@ -6,7 +6,7 @@
    Version: 1.1
    Author: Elvtn, LLC
    Author URI: https://elvtn.com
-   License: GPL2
+   License: GPL3
   */
 
 if ( ! defined( 'ABSPATH' ) ) exit;
