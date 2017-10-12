@@ -1,19 +1,41 @@
-# Zillow WordPress Plugin
+=== Elvtn Zillow Plugin ===
+Contributors: elvtn
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8C8535TEAQ7PJ
+Tags: zillow, real estate
+Requires at least: 4.7
+Tested up to: 4.8.2
+Stable tag: 1.2
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Plugin for adding Zillow data using WordPress widgets.
+Allows embedding of Zillow real estate data via widgets.
 
-This plugin is totally free, but [donations](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8C8535TEAQ7PJ "PayPal") are always welcome :)
+== Description ==
 
-## Installation
+This plugin adds new widgets that can be embedded through any standard widget mechanism (shortcode, customizer, etc). The widgets use Zillow Partner API, and make use of 24 hour transients to cache data and prevent overuse of the Zillow API service.
 
-For now there is no provided zip file but you can clone the repository and create a zip file of all its contents. This zip file can then be installed using normal WordPress plugin management on your admin screen or via WP-CLI.
+== Installation ==
 
-    git clone https://github.com/elvtn/zillow-wordpress-plugin.git
-    zip zillow-wordpress-plugin.zip *
+1. Upload the plugin .zip file to the `/wp-content/plugins/` directory, or upload via the Plugins menu on the admin screen.
+2. Activate the plugin through the 'Plugins' screen in WordPress.
 
-## Change Log
+== Frequently asked questions ==
 
-### 1.2 (October 10, 2017)
+= How do I get a Zillow Partner ID? =
+
+You'll need to be a registered Zillow professional. This article may help: https://www.zillow.com/advice-thread/Partner-ID/575081/. If not, please reach out to Zillow tech support and they can get you sorted out.
+
+= What can I do with this plugin? =
+
+For now it only has a widget which embeds your latest reviews from Zillow. In the future I hope to add more widgets that tap into other features of the Zillow API.
+
+== Screenshots ==
+
+None
+
+== Changelog ==
+
+### 1.2 (October 11, 2017)
 
 - Tested with WordPress 4.8.2
 
@@ -26,3 +48,11 @@ For now there is no provided zip file but you can clone the repository and creat
 
 - Initial release.
 - Only supports reviews widgets.
+
+== Upgrade notice ==
+
+None
+
+== Author ==
+
+https://elvtn.com
