@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * https://www.zillow.com/mortgage/api/
  *
  * These APIs require a partnerId, which can be obtained from Zillow support. Each call
- * also takes a lenderRef, which is 
+ * also takes a lenderRef, which is assumed to be the Zillow screen name.
  */
 class Elvtn_Zillow_Api
 {

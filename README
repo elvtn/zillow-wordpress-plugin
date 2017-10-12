@@ -23,11 +23,11 @@ This plugin adds new widgets that can be embedded through any standard widget me
 
 = How do I get a Zillow Partner ID? =
 
-You'll need to be a registered Zillow professional. This article may help: https://www.zillow.com/advice-thread/Partner-ID/575081/. If not, please reach out to Zillow tech support and they can get you sorted out.
+Start here: https://www.zillow.com/mortgage/api/
 
 = What can I do with this plugin? =
 
-For now it only has a widget which embeds your latest reviews from Zillow. In the future I hope to add more widgets that tap into other features of the Zillow API.
+For now it only has a widget which embeds your latest reviews from Zillow. In the future I hope to add more widgets that tap into other features of the Zillow Mortgage API.
 
 == Screenshots ==
 
