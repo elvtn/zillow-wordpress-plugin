@@ -13,6 +13,10 @@ For now there is no provided zip file but you can clone the repository and creat
 
 ## Change Log
 
+### 1.3 (October 24, 2017)
+
+- Updated to use wp_remote_post instead of curl.
+
 ### 1.2 (October 10, 2017)
 
 - Tested with WordPress 4.8.2

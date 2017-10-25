@@ -62,42 +62,21 @@ class Elvtn_Zillow_Api
 
 		$url = "https://mortgageapi.zillow.com/getPublishedLenderReviews";
 
-		$curl_res = $this->curl_post($url, array(), array(), $params);
+        $response = wp_remote_post(
+            $url,
+            array(
+                'body' => json_encode($params)
+            )
+        );
 
-		return $this->convert_getPublishedLenderReviews_to_html($curl_res, $screenName);
-	}
-
-	/**
-	 * Helper method to execute curl POST calls to Zillow API server
-	 */
-	private function curl_post($url, array $get = NULL, array $options = array(), array $body = array()) 
-	{
-		$json_body = json_encode($body);
-
-	    $defaults = array(
-	        CURLOPT_URL            => $url . (strpos($url, '?') === FALSE ? '?' : '') . http_build_query($get),
-	        CURLOPT_CUSTOMREQUEST  => "POST",
-	        CURLOPT_POSTFIELDS     => $json_body,
-	        //CURLOPT_HEADER         => 0,
-	        CURLOPT_RETURNTRANSFER => TRUE,
-	        //CURLOPT_TIMEOUT        => 4,
-	        CURLOPT_SSL_VERIFYHOST => 0,
-	        CURLOPT_SSL_VERIFYHOST => 0,
-	        CURLOPT_HTTPHEADER     => array(
-    			'Content-Type: application/json',
-    			'Content-Length: ' . strlen($json_body)
-    		)
-	    );
-
-	    $ch = curl_init();
-	    curl_setopt_array($ch, ($options + $defaults));
-	    if( ! $result = curl_exec($ch))
-	    {
-	        trigger_error(curl_error($ch));
-	    }
-	    curl_close($ch);
-
-	    return $result;
+		if ( is_wp_error( $response ) )
+		{
+			return "<p>Error retrieving Zillow reviews</p>";
+		}
+		else
+		{
+			return $this->convert_getPublishedLenderReviews_to_html($response['body'], $screenName);
+		}
 	}
 
 	/**
